@@ -424,11 +424,11 @@ export const WindowContent: React.FC<WindowContentProps> = ({ appName }) => {
               <CardContent className="space-y-2">
                 <div className="flex justify-between">
                   <span className="text-md3-on-surface-variant">Version</span>
-                  <span className="text-md3-on-surface">PortOS 1.0</span>
+                  <span className="text-md3-on-surface">PortOS 3.7</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-md3-on-surface-variant">Build</span>
-                  <span className="text-md3-on-surface">2025.01.01</span>
+                  <span className="text-md3-on-surface">2025.09.02</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-md3-on-surface-variant">Developer</span>
