@@ -162,7 +162,7 @@ export const WindowContent: React.FC<WindowContentProps> = ({ appName }) => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                 <Card className="text-center p-6 hover:shadow-lg transition-shadow">
                   <Briefcase className="w-8 h-8 text-blue-500 mx-auto mb-2" />
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white">3+</h3>
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white">1+</h3>
                   <p className="text-slate-600 dark:text-slate-300">Years Experience</p>
                 </Card>
                 <Card className="text-center p-6 hover:shadow-lg transition-shadow">
@@ -176,7 +176,6 @@ export const WindowContent: React.FC<WindowContentProps> = ({ appName }) => {
                   <p className="text-slate-600 dark:text-slate-300">Client Rating</p>
                 </Card>
               </div>
-
               {/* Featured Projects */}
               <Card className="mb-8">
                 <CardHeader>
