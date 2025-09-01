@@ -1,0 +1,364 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* PortOS Design System - macOS inspired with Material Design 3
+All colors MUST be HSL for theme compatibility.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+/* Wallpapers */
+.wallpaper-monterey {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.wallpaper-big-sur {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.wallpaper-ventura {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.wallpaper-sonoma {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+@layer base {
+  :root {
+    /* PortOS Core Colors - macOS inspired */
+    --background: 220 15% 97%;
+    --foreground: 220 9% 9%;
+    
+    /* Desktop & System */
+    --desktop-bg: 220 15% 97%;
+    --glass-bg: 220 15% 97% / 0.7;
+    --blur-strength: 20px;
+    
+    /* Material Design 3 Dynamic Colors */
+    --md3-primary: 212 100% 50%;
+    --md3-primary-container: 212 100% 95%;
+    --md3-on-primary: 0 0% 100%;
+    --md3-on-primary-container: 212 100% 10%;
+    
+    --md3-secondary: 220 14% 46%;
+    --md3-secondary-container: 220 14% 90%;
+    --md3-on-secondary: 0 0% 100%;
+    --md3-on-secondary-container: 220 14% 10%;
+    
+    --md3-surface: 220 15% 97%;
+    --md3-surface-variant: 220 12% 93%;
+    --md3-on-surface: 220 9% 9%;
+    --md3-on-surface-variant: 220 7% 26%;
+    
+    --md3-error: 0 84% 60%;
+    --md3-error-container: 0 84% 95%;
+    --md3-on-error: 0 0% 100%;
+    
+    /* Window System */
+    --window-bg: 220 15% 98%;
+    --window-border: 220 10% 85%;
+    --window-shadow: 220 30% 20% / 0.15;
+    --traffic-light-red: 0 84% 60%;
+    --traffic-light-yellow: 48 100% 67%;
+    --traffic-light-green: 120 100% 40%;
+    
+    /* Dock & Navigation */
+    --dock-bg: 220 15% 95% / 0.8;
+    --dock-border: 220 10% 85% / 0.3;
+    --dock-shadow: 220 30% 20% / 0.1;
+    
+    /* Interactive Elements */
+    --ripple-color: 212 100% 50% / 0.12;
+    --hover-overlay: 220 9% 9% / 0.04;
+    --pressed-overlay: 220 9% 9% / 0.08;
+    
+    /* Legacy Shadcn compatibility */
+    --card: hsl(var(--md3-surface));
+    --card-foreground: hsl(var(--md3-on-surface));
+    --primary: hsl(var(--md3-primary));
+    --primary-foreground: hsl(var(--md3-on-primary));
+    --secondary: hsl(var(--md3-secondary-container));
+    --secondary-foreground: hsl(var(--md3-on-secondary-container));
+    --muted: hsl(var(--md3-surface-variant));
+    --muted-foreground: hsl(var(--md3-on-surface-variant));
+    --accent: hsl(var(--md3-primary-container));
+    --accent-foreground: hsl(var(--md3-on-primary-container));
+    --destructive: hsl(var(--md3-error));
+    --destructive-foreground: hsl(var(--md3-on-error));
+    --border: hsl(var(--window-border));
+    --input: hsl(var(--md3-surface-variant));
+    --ring: hsl(var(--md3-primary));
+    --radius: 12px;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* PortOS Dark Theme - Default */
+    --background: 220 15% 4%;
+    --foreground: 220 9% 95%;
+    
+    /* Desktop & System Dark */
+    --desktop-bg: 220 15% 4%;
+    --glass-bg: 220 15% 4% / 0.8;
+    
+    /* Material Design 3 Dark Colors */
+    --md3-primary: 212 100% 70%;
+    --md3-primary-container: 212 100% 20%;
+    --md3-on-primary: 212 100% 10%;
+    --md3-on-primary-container: 212 100% 90%;
+    
+    --md3-secondary: 220 14% 70%;
+    --md3-secondary-container: 220 14% 20%;
+    --md3-on-secondary: 220 14% 10%;
+    --md3-on-secondary-container: 220 14% 90%;
+    
+    --md3-surface: 220 15% 12%;
+    --md3-surface-variant: 220 12% 16%;
+    --md3-on-surface: 220 9% 91%;
+    --md3-on-surface-variant: 220 7% 74%;
+    
+    --md3-error: 0 84% 70%;
+    --md3-error-container: 0 84% 20%;
+    
+    /* Window System Dark */
+    --window-bg: 220 15% 10%;
+    --window-border: 220 10% 25%;
+    --window-shadow: 0 0% 0% / 0.3;
+    
+    /* Dock & Navigation Dark */
+    --dock-bg: 220 15% 12% / 0.8;
+    --dock-border: 220 10% 25% / 0.3;
+    --dock-shadow: 0 0% 0% / 0.2;
+    
+    /* Interactive Elements Dark */
+    --ripple-color: 212 100% 70% / 0.12;
+    --hover-overlay: 220 9% 91% / 0.04;
+    --pressed-overlay: 220 9% 91% / 0.08;
+    
+    /* Legacy Shadcn Dark compatibility */
+    --card: hsl(var(--md3-surface));
+    --card-foreground: hsl(var(--md3-on-surface));
+    --primary: hsl(var(--md3-primary));
+    --primary-foreground: hsl(var(--md3-on-primary));
+    --secondary: hsl(var(--md3-secondary-container));
+    --secondary-foreground: hsl(var(--md3-on-secondary-container));
+    --muted: hsl(var(--md3-surface-variant));
+    --muted-foreground: hsl(var(--md3-on-surface-variant));
+    --accent: hsl(var(--md3-primary-container));
+    --accent-foreground: hsl(var(--md3-on-primary-container));
+    --destructive: hsl(var(--md3-error));
+    --destructive-foreground: hsl(var(--md3-on-error));
+    --border: hsl(var(--window-border));
+    --input: hsl(var(--md3-surface-variant));
+    --ring: hsl(var(--md3-primary));
+  }
+}
+
+/* Genie minimize animation */
+@keyframes genie-minimize {
+  0% {
+    transform: scale(1) perspective(800px) rotateX(0deg);
+    opacity: 1;
+    transform-origin: center bottom;
+  }
+  30% {
+    transform: scale(0.9) perspective(800px) rotateX(-5deg);
+    opacity: 0.9;
+  }
+  60% {
+    transform: scale(0.5) perspective(800px) rotateX(-20deg) translateY(50px);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(0.05) perspective(800px) rotateX(-45deg) translateY(300px) translateX(0px);
+    opacity: 0;
+    transform-origin: center bottom;
+  }
+}
+
+/* Liquid glass effect */
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px) saturate(1.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.dark .liquid-glass {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(20px) saturate(1.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Chromatic aberration effect */
+.chromatic-aberration {
+  position: relative;
+  overflow: hidden;
+}
+
+.chromatic-aberration::before,
+.chromatic-aberration::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.chromatic-aberration::before {
+  background: linear-gradient(45deg, 
+    rgba(255, 0, 0, 0.1) 0%, 
+    transparent 25%, 
+    transparent 75%, 
+    rgba(0, 255, 0, 0.1) 100%);
+  animation: chromatic-shift 3s ease-in-out infinite;
+}
+
+.chromatic-aberration::after {
+  background: linear-gradient(-45deg, 
+    rgba(0, 0, 255, 0.1) 0%, 
+    transparent 25%, 
+    transparent 75%, 
+    rgba(255, 255, 0, 0.1) 100%);
+  animation: chromatic-shift-reverse 4s ease-in-out infinite;
+}
+
+@keyframes chromatic-shift {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(1px, -1px); }
+  50% { transform: translate(-1px, 1px); }
+  75% { transform: translate(1px, 1px); }
+}
+
+@keyframes chromatic-shift-reverse {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-1px, 1px); }
+  50% { transform: translate(1px, -1px); }
+  75% { transform: translate(-1px, -1px); }
+}
+
+/* Reboot animation */
+@keyframes apple-reboot {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.reboot-animation {
+  animation: apple-reboot 2s ease-in-out;
+}
+
+/* Mobile warning styles */
+.mobile-warning {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-family: 'Roboto Flex', sans-serif;
+}
+
+/* Custom slider styles */
+.slider {
+  background: linear-gradient(to right, hsl(var(--md3-primary)) 0%, hsl(var(--md3-primary)) var(--value, 0%), hsl(var(--md3-surface)) var(--value, 0%), hsl(var(--md3-surface)) 100%);
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: hsl(var(--md3-primary));
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: hsl(var(--md3-primary));
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(var(--foreground) / 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(var(--foreground) / 0.3);
+}
+
+/* Credit footer */
+.credit-footer {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: 'Roboto Flex', system-ui, sans-serif;
+  z-index: 50;
+  pointer-events: none;
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.1);
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
