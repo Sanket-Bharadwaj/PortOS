@@ -117,10 +117,10 @@ export const Terminal: React.FC<TerminalProps> = ({ onClose }) => {
         output = [
           '📧 Contact Information:',
           '',
-          'Email: sanket.bharadwaj@example.com',
+          'Email: sanket@friday.com',
           'LinkedIn: https://linkedin.com/in/sanket-bharadwaj',
           'GitHub: https://github.com/Sanket-Bharadwaj',
-          'Portfolio: https://sanket-portfolio.lovable.app',
+          'Portfolio: https://sanketbharadwaj.vercel.app',
           ''
         ];
         break;
